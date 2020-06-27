@@ -1,26 +1,3 @@
-exports.oddEvenRelativeSort = (userInputArray) => {
-let userInputArrayLength = userInputArray.length;
-let oddnumberArray = [];
-let evennumberArray = [];
-//segregate the array in to two sub arrays like odd numbers in a separate array and even numbers in a separate array.
-for(let i=0 ; i < userInputArrayLength ; i++){
-	if (userInputArray[i] % 2 === 0) {
-      evennumberArray.push(userInputArray[i]);
-    } else {
-      oddnumberArray.push(userInputArray[i]);
-    }
-}
-//sort the array individually using a custom sort method and retrieve the sorted odd array
-oddnumbers = customSort(oddnumberArray);
-//sort the array individually using a custom sort method and retrieve the sorted even array
-evennumbers = customSort(evennumberArray);
-//join both the arrays and return the final result array 
-result = oddnumbers.concat(evennumbers);
-// return the result
-//alert(result);
-return result;
-};
-
 function customSort(arrayToSort) {
   let complete = false;
   while (!complete) {
@@ -38,3 +15,33 @@ function customSort(arrayToSort) {
 
   return arrayToSort;
 }
+
+function sortAndConcatenate(oddnumberArray,evennumberArray){
+//sort the array individually using a custom sort method and retrieve the sorted odd array
+oddnumbers = customSort(oddnumberArray);
+//sort the array individually using a custom sort method and retrieve the sorted even array
+evennumbers = customSort(evennumberArray);
+//join both the arrays and return the final result array 
+result = oddnumbers.concat(evennumbers);
+return result;
+}
+
+exports.oddEvenRelativeSort = (userInputArray) => {
+let userInputArrayLength = userInputArray.length;
+let oddnumberArray = [];
+let evennumberArray = [];
+//segregate the array in to two sub arrays like odd numbers in a separate array and even numbers in a separate array.
+for(let i=0 ; i < userInputArrayLength ; i++){
+  if(userInputArray[i] == null || userInputArray[i] == undefined){
+    return 'no value provided in list of values';
+  }
+	if (userInputArray[i] % 2 === 0) {
+      evennumberArray.push(userInputArray[i]);
+    } else {
+      oddnumberArray.push(userInputArray[i]);
+    }
+}
+
+result = sortAndConcatenate(oddnumberArray,evennumberArray);
+return result;
+};

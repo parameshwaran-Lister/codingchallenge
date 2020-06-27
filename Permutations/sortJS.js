@@ -12,7 +12,10 @@ exports.runPermutation = (userInputArray) => {
   while (i < length) {
     if (c[i] < i) {
       k = i % 2 && c[i];
-	  //swap the values of the array
+    //swap the values of the array
+    if(userInputArray[i] == null || userInputArray[i] == undefined){
+      return 'no value provided in the input array';
+    }
       p = userInputArray[i];
       userInputArray[i] = userInputArray[k];
       userInputArray[k] = p;

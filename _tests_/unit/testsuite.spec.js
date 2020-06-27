@@ -1,8 +1,8 @@
 const assert = require("assert").strict;
 const sortOddEven = require("../../SortOddEven/oddEvenJS");
 const permutation = require("../../Permutations/sortJS");
-describe("testCasesByJest()", () => {
-  it("SORT - should return array in sort of odd first and even next", () => {
+describe("test cases for running the coding challenge", () => {
+  it("return array sorted for values off first and even next", () => {
     expect(sortOddEven.oddEvenRelativeSort([1, 4, 3, 2, 5, 7, 6, 8])).toEqual([
       1,
       3,
@@ -15,7 +15,7 @@ describe("testCasesByJest()", () => {
     ]);
   });
 
-  it("SORT - should return array in sort even with negative numbers", () => {
+  it("return array sorted for values in negative", () => {
     expect(sortOddEven.oddEvenRelativeSort([1, -4, 3, 0, -5, 7, 6, 8])).toEqual([
       -5,
       1,
@@ -28,16 +28,16 @@ describe("testCasesByJest()", () => {
     ]);
   });
 
-  it("SORT - should return error with null values", () => {
+  it("return error with null values", () => {
     expect(sortOddEven.oddEvenRelativeSort([1, null, 3, 0, -5, 7, 6, 8])).toEqual(
-      "Input is not valid , Please provide valid input"
+      "no value provided in list of values"
     );
   });
 
-  it("SORT - should return error if array has undefined values", () => {
+  it("return error with undefined values", () => {
     expect(
         sortOddEven.oddEvenRelativeSort([1, undefined, 3, 0, -5, 7, 6, 8])
-    ).toEqual("Input is not valid , Please provide valid input");
+    ).toEqual("no value provided in list of values");
   });
 
   it("PERMUTATION - should return permutation values which contain characters", () => {
@@ -58,6 +58,9 @@ describe("testCasesByJest()", () => {
       [1, 2, 1],
       [2, 1, 1],
       [1, 1, 2],
+      [1, 1, 2],
+      [2, 1, 1],
+      [1, 2, 1]
     ]);
   });
 
@@ -72,15 +75,15 @@ describe("testCasesByJest()", () => {
     ]);
   });
 
-  it("PERMUTATION - test the array which contain undefined as value", () => {
+  it("return no value for array with null / undefined values", () => {
     expect(permutation.runPermutation([1, null, 3])).toEqual(
-      ["Input is not valid , Please provide valid input"]
+      "no value provided in the input array"
     );
   });
 
-  it("PERMUTATION - test the array which contain null as value", () => {
+  it("return no value for array with null / undefined values", () => {
     expect(permutation.runPermutation([1, undefined, 3])).toEqual(
-     ["Input is not valid , Please provide valid input"]
+     "no value provided in the input array"
     );
   });
 });
