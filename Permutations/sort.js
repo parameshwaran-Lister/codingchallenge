@@ -10,7 +10,7 @@ exports.runPermutation = (userInputArray) => {
   let p;
 
   while (i < length) {
-    if (!userInputArray[i]) {
+    if (userInputArray[i] == null || typeof(userInputArray[i]) == undefined) {
       return 'no value provided in the input array';
     }
     if (c[i] < i) {
