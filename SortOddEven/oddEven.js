@@ -26,7 +26,7 @@ exports.oddEvenRelativeSort = (userInputArray) => {
   let evennumberArray = [];
   //segregate the array in to two sub arrays like odd numbers in a separate array and even numbers in a separate array.
   for (let i = 0; i < userInputArray.length; i++) {
-    if (userInputArray[i] == null || typeof (userInputArray[i]) == undefined) {
+    if (!userInputArray[i] && userInputArray[i] !== 0) {
       return 'no value provided in list of values';
     }
     if (userInputArray[i] % 2 === 0) {
