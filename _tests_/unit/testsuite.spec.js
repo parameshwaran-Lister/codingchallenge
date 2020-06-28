@@ -1,6 +1,5 @@
-const assert = require("assert").strict;
-const sortOddEven = require("../../SortOddEven/oddEvenJS");
-const permutation = require("../../Permutations/sortJS");
+const sortOddEven = require("../../SortOddEven/oddEven");
+const permutation = require("../../Permutations/sort");
 describe("test cases for running the coding challenge", () => {
   it("return array sorted for values off first and even next", () => {
     expect(sortOddEven.oddEvenRelativeSort([1, 4, 3, 2, 5, 7, 6, 8])).toEqual([
@@ -36,7 +35,7 @@ describe("test cases for running the coding challenge", () => {
 
   it("return error with undefined values", () => {
     expect(
-        sortOddEven.oddEvenRelativeSort([1, undefined, 3, 0, -5, 7, 6, 8])
+      sortOddEven.oddEvenRelativeSort([1, undefined, 3, 0, -5, 7, 6, 8])
     ).toEqual("no value provided in list of values");
   });
 
@@ -83,7 +82,7 @@ describe("test cases for running the coding challenge", () => {
 
   it("return no value for array with null / undefined values", () => {
     expect(permutation.runPermutation([1, undefined, 3])).toEqual(
-     "no value provided in the input array"
+      "no value provided in the input array"
     );
   });
 });
