@@ -4,13 +4,11 @@ exports.runPermutation = (userInputArray) => {
   //copy of the input array to push the changed values 
   let result = [userInputArray.slice()];
   let c = new Array(length).fill(0);
-
   let i = 1;
   let k;
   let p;
-
   while (i < length) {
-    if (userInputArray[i] == null || typeof(userInputArray[i]) == undefined) {
+    if (userInputArray[i] == null || typeof (userInputArray[i]) == undefined) {
       return 'no value provided in the input array';
     }
     if (c[i] < i) {
